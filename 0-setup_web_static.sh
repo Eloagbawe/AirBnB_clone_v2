@@ -13,6 +13,7 @@ echo 'Holberton School' | sudo tee /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu /data/
 sudo chgrp -R ubuntu /data/
+sudo service nginx start
 sudo sed -i "/server_name _;/ a\\\trewrite ^/redirect_me http://www.google.com permanent;" /etc/nginx/sites-available/default
 sudo sed -i '/server_name _/a location /hbnb_static {alias /data/web_static/current; }' /etc/nginx/sites-available/default
 sudo sed -i '/server_name _/a error_page 404 /404.html; location = /404.html {root /var/www/error/;internal; }' /etc/nginx/sites-available/default
