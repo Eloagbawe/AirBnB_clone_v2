@@ -16,5 +16,5 @@ sudo chgrp -R ubuntu /data/
 sudo sed -i "/server_name _;/ a\\\trewrite ^/redirect_me http://www.google.com permanent;" /etc/nginx/sites-available/default
 sudo sed -i '/server_name _;/a location /hbnb_static {alias /data/web_static/current; index index.html index.htm;}' /etc/nginx/sites-available/default
 sudo sed -i '/server_name _;/a error_page 404 /404.html; location = /404.html {root /var/www/error/;internal; }' /etc/nginx/sites-available/default
-sudo sed -i "/listen [::]:80 default_server;/a \n\tadd_header X-Served-By "$HOSTNAME";/" /etc/nginx/sites-available/default
+sudo sed -i "/listen [::]:80 default_server;/a \n\tadd_header X-Served-By "$HOSTNAME";" /etc/nginx/sites-available/default
 sudo service nginx restart
