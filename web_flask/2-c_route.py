@@ -26,7 +26,8 @@ def c_route(text):
     """This function executes when 0.0.0.0:/5000/c/<text>
     is requested
     """
-    return 'c ' + text
+    new_text = text.replace("_", " ")
+    return 'c ' + new_text
 
 
 if __name__ == '__main__':
