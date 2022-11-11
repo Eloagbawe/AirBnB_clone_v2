@@ -27,7 +27,7 @@ def c_route(text):
     is requested
     """
     new_text = text.replace("_", " ")
-    return 'c ' + new_text
+    return 'C ' + new_text
 
 
 if __name__ == '__main__':
