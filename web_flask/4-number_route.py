@@ -49,5 +49,5 @@ def number(n):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
-    subprocess.run("export", "FLASK_APP=1-hbnb_route.py")
+    subprocess.run("export", "FLASK_APP=4-number_route.py")
     subprocess.run("flask run")
