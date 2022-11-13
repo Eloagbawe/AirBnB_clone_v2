@@ -4,7 +4,6 @@
 from flask import Flask
 from flask import render_template
 from models import storage
-from models.state import State
 import subprocess
 
 
@@ -16,7 +15,7 @@ def cities_by_states():
     """This function executes when 0.0.0.0:/5000/states_list
     is requested
     """
-    state_list = storage.all(State)
+    state_list = storage.all("State")
     states = []
     for value in state_list.values():
         states.append(value)
