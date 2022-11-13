@@ -5,35 +5,28 @@ from flask import Flask
 from flask import render_template
 from models import storage
 from models.state import State
+from models.amenity import Amenity
 import subprocess
 
 
 app = Flask(__name__)
 
 
-@app.route('/states', strict_slashes=False)
-def states():
-    """This function executes when 0.0.0.0:/5000/states
+@app.route('/hbnb_filters', strict_slashes=False)
+def hbnb_filters():
+    """This function executes when 0.0.0.0:/5000/states_list
     is requested
     """
     state_list = storage.all(State)
+    amenity_list = storage.all(Amenity)
     states = []
+    amenities = []
     for value in state_list.values():
         states.append(value)
-    return render_template('9-states.html', states=states, id=None)
-
-
-@app.route('/states/<id>', strict_slashes=False)
-def single_state(id):
-    """This function executes when 0.0.0.0:/5000/states
-    is requested
-    """
-    state_list = storage.all(State)
-    state = {}
-    for key, value in state_list.items():
-        if value.id == id:
-            state = state_list[key]
-    return render_template('9-states.html', id=id, state=state)
+    for value in amenity_list.values():
+        amenities.append(value)
+    return render_template('10-hbnb_filters.html',
+                           states=states, amenities=amenities)
 
 
 @app.teardown_appcontext
