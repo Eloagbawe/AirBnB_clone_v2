@@ -37,5 +37,5 @@ def tear_down_context(exception):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
-    subprocess.run("export", "FLASK_APP=9-states.py")
+    subprocess.run("export", "FLASK_APP=10-hbnb_filters.py")
     subprocess.run("flask run")
