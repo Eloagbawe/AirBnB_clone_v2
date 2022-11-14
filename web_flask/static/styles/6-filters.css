@@ -31,11 +31,12 @@
 .popover {
 	list-style-type: none;
 	display: none;
-	background-color: #FAFAFA;
+	background-color: #fafafa;
 	width: 100%;
-
+	position: relative;
+	z-index: 2;
 	margin-left: -1px;
-	margin-top: 8px;
+	margin-top: 13px;
 	padding: 25px 0px;
 
 	border: 1px solid #DDDDDD;
@@ -45,11 +46,12 @@
 }
 
 .locations:hover .popover {
-	display: inline-block;
+	display: block;
+
 }
 
 .filter_amenities:hover .popover {
-	display: inline-block;
+	display: block;
 }
 
 ul {
